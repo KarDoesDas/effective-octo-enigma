@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register Form</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'register.css' %}">
+  </head>
+
+  <body>
+
+    <div class="container">
+        <h1 class = "label" > User Register </h1>
+        <form class = "login_form" method="post" name="form"  action="/registration">
+          {% csrf_token %}
+
+            <div class = "font">Username</div>
+            <input autocomplete = "off" type = "text" name = "username">
+
+            <div class = "font">Email address</div>
+            <input autocomplete = "off" type = "text" name = "email">
+
+            <div class = "font">Phone Number</div>
+            <input autocomplete = "off" type = "text" name = "phone">
+
+            <div id = "email_error" > Please enter email or phone </div>
+
+
+            <div class = "font font2">Password</div>
+            <input type = "password" name = "password">
+            <div id = "password_error" > Please enter password </div>
+
+            <div class = "font font2">Confirm Password</div>
+            <input type = "password" name = "password_confirm">
+            <div id = "password_error" > Please enter password </div>
+
+            <button type = "submit" >Register</button>
+
+            <a href="/accounts/login">Already have an account? Login.</a>
+        </form>
+
+    </div>
+    <script src = "register.js" ></script>
+  </body>
+</html>
+
+
+
